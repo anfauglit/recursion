@@ -6,21 +6,18 @@ def bad_pos(pos):
         return not find_goodmove(pos)
             
 def find_goodmove(pos):
-        # print('find',pos,d)
-
-        for r in range(2):
+        for r in range(3):
             for n in range(1,pos[r]+1):
-         #       print(pos,n, pos[r])
+                print('state:',pos,'current_move:',r,n)
                 pos[r] -= n
                 if bad_pos(pos):
-                    print(r,n)
+                    print('->bad_pos',r,n)
                     pos[r] += n
                     return True
                 pos[r] +=n 
 
-        
         return False 
 
 # initial state
-pos=[3,3]
-find_goodmove(pos)
+pos=[3,4,0]
+print(find_goodmove(pos))
