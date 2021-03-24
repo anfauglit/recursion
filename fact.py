@@ -34,13 +34,13 @@ def gcd(x, y):
 	return gcd(y, x % y)
 
 def k_permutation(n, k):
-	if n == (n - k):
-		return n - k 
-	print(n,k)
+	if k == 0:
+		return 1 
+	print(n,k, n-k+1)
 	input()
-	return n * k_permutation(n-1, k)
+	return (n-k+1) * k_permutation(n, k-1)
 	
-print(k_permutation(5, 3), itertools.permutations(5,3))
+print(k_permutation(5, 3))
 arr = np.random.randint(100, size=100)
 
 index = len(arr) - 1 
